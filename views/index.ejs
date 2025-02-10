@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNION SPORTING DE LABATTOIR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: rgb(252, 234, 72);
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: rgb(238, 72, 21);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar li {
+      margin: 0 15px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: rgb(255, 217, 102);
+    }
+    .icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .main-content {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .main-content h1 {
+      color: rgb(238, 72, 21);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .main-content p {
+      font-size: 1.2rem;
+      color: rgb(80, 80, 80);
+    }
+    .footer {
+      background-color: rgb(238, 72, 21);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+    .footer a {
+      color: rgb(255, 217, 102);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .modal-content h2 {
+      color: rgb(238, 72, 21);
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .input-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(238, 72, 21);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .modal-content button:hover {
+      background-color: rgb(255, 217, 102);
+      color: rgb(238, 72, 21);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo du club">
+      <span>UNION SPORTING DE LABATTOIR</span>
+    </div>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Équipes</a></li>
+      <li><a href="#">Classements</a></li>
+      <li><a href="#">Contactez-nous</a></li>
+      <li><a href="#">Divers</a></li>
+    </ul>
+    <div class="icon">
+      <a href="#" id="openModal"> Mon espace </a>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <div class="main-content">
+    <h1>Bienvenue sur le site de l'Union Sporting de Labattoir !</h1>
+    <p>Découvrez nos équipes, nos classements et les dernières actualités de notre club.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Union sporting de Labattoir. Tous droits réservés.</p>
+    <p>
+      <a href="#">Équipes</a> | 
+      <a href="#">Classements</a> | 
+      <a href="#">Contactez-nous</a>
+    </p>
+  </footer>
+
+  <!-- Fenêtre modale pour la connexion -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <h2>Connexion</h2>
+      <form id="loginForm" action="#" method="POST">
+        <div class="input-group">
+          <label for="username">Nom d'utilisateur</label>
+          <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+        </div>
+        <div class="input-group">
+          <label for="role">Rôle</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Choisissez votre rôle</option>
+            <option value="joueur">Joueur</option>
+            <option value="dirigeant">Dirigeant</option>
+          </select>
+        </div>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const openModal = document.getElementById('openModal');
+    const loginModal = document.getElementById('loginModal');
+
+    openModal.addEventListener('click', function(event) {
+      event.preventDefault();
+      loginModal.style.display = 'flex';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === loginModal) {
+        loginModal.style.display = 'none';
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const role = document.getElementById('role').value;
+
+      if (username === '' || password === '' || role === '') {
+        event.preventDefault();
+        alert('Veuillez remplir tous les champs correctement.');
+      } else {
+        alert(`Bienvenue, ${username} (${role}) !`);
+      }
+    });
+  </script>
+
+</body>
+</html>
+<!--🔑-->
