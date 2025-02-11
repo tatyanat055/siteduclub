@@ -3,101 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classement - Union Sporting Club de Labattoir</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/style.css">
+  <title>Classement des Équipes</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
 </head>
 <body>
-  <!-- Inclusion de la navbar -->
-  <%- include('partials/navbar') %>
-
-  <!-- Contenu principal -->
-  <div class="main-content">
-    <h1>Classement des équipes</h1>
-    <table class="classement-table">
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Nom de l'équipe</th>
-          <th>Matchs joués</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Union Sporting Club de Labattoir</td>
-          <td>10</td>
-          <td>25</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Équipe A</td>
-          <td>10</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Équipe B</td>
-          <td>10</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Équipe C</td>
-          <td>10</td>
-          <td>18</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Inclusion du footer -->
-  <%- include('partials/footer') %>
-
-  <script src="/scripts/main.js"></script>
+  <h1>Classement des Équipes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Équipe</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Paris Saint-Germain</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Olympique de Marseille</td>
+        <td>68</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>AS Monaco</td>
+        <td>65</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Olympique Lyonnais</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>LOSC Lille</td>
+        <td>58</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
-
-<!-- Tableau Championnat-->
-<table>
-    <body>
-        <title>
-            CLASSEMENT CHAMPIONNAT R3
-        </title>
-     <caption>
-        CHAMPIONNAT REGIONAL 3/FFF MAYOTTE
-     </caption>
-        <link href="style.css" rel="stylesheet">
-    <tr>
-        <th scope="col">Equipes</th>
-        <th scope="col">Points</th>
-        <th scope="col">Joueurs</th>
-    </tr>
-    <tr>
-        <th scope="row">USCL</th>
-        <td>34</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <th scope="row">Etincelles Hamjago</th>
-        <td>29</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <th scope="row">FCY KOUNGOU</th>
-        <td>28</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <th scope="row">USCJ KOUNGOU</th>
-        <td>26</td>
-        <td>16</td>
-    </tr>
-    <tr>
-        <th scope="row">FCO</th>
-        <td>26</td>
-        <td>16</td>
-    </tr>
-</body>
-</table>
